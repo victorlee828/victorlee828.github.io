@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="DMW LOGO.png">
 </head>
 <body>
-    <!-- 顶部导航（和芯朋一致：浅色背景 + Logo + 搜索 + 横向菜单） -->
+    <!-- 顶部导航 -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -40,22 +40,23 @@
         </div>
     </header>
 
-    <!-- 全屏轮播 Banner（和芯朋一致：渐变科技背景 + 居中标题 + 自动轮播） -->
+    <!-- 轮播 Banner + 粒子磁吸背景 -->
     <section class="hero-slider">
+        <canvas id="tech-bg" class="tech-canvas"></canvas>
         <div class="slider-container">
-            <div class="slide active" style="background: linear-gradient(rgba(0, 128, 128, 0.85), rgba(0, 128, 128, 0.75)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;">
+            <div class="slide active" style="background: transparent;">
                 <div class="slide-content">
                     <h2>为您提供高效可靠的<br>电子元器件解决方案</h2>
                     <p>TO PROVIDE YOU WITH HIGH PERFORMANCE AND RELIABLE<br>ELECTRONIC COMPONENTS SOLUTIONS</p>
                 </div>
             </div>
-            <div class="slide" style="background: linear-gradient(rgba(0, 102, 204, 0.85), rgba(0, 102, 204, 0.75)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;">
+            <div class="slide" style="background: transparent;">
                 <div class="slide-content">
                     <h2>家电电源及驱动芯片<br>行业优秀厂商</h2>
                     <p>HOME APPLIANCE POWER SUPPLY AND DRIVER IC<br>INDUSTRY EXCELLENT MANUFACTURER</p>
                 </div>
             </div>
-            <div class="slide" style="background: linear-gradient(rgba(153, 204, 0, 0.85), rgba(153, 204, 0, 0.75)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;">
+            <div class="slide" style="background: transparent;">
                 <div class="slide-content">
                     <h2>更可靠·更高效<br>业内先进的高低压集成半导体技术</h2>
                     <p>THE INDUSTRY'S ADVANCED HIGH AND LOW VOLTAGE INTEGRATED SEMICONDUCTOR TECHNOLOGY</p>
@@ -69,7 +70,7 @@
         <div class="slider-dots"></div>
     </section>
 
-    <!-- 内容区块（和芯朋一致：多色卡片网格 + 右侧新闻时间轴） -->
+    <!-- 内容区块 -->
     <section class="content-grid">
         <div class="container">
             <div class="grid-left">
@@ -119,7 +120,7 @@
         </div>
     </section>
 
-    <!-- 页脚（和芯朋一致：简洁版权信息） -->
+    <!-- 页脚 -->
     <footer>
         <div class="container">
             <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
