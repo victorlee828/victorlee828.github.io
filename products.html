@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品展示 - 迪曼微电子</title>
+    <title>产品展示 - 深圳市迪曼微电子科技有限公司</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
+    <!-- 头部导航 -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-microchip" style="font-size: 32px; color: #1E3A8A;"></i>
+                <img src="logo.png" alt="迪曼微电子 Logo">
                 <div>
                     <h1>迪曼微电子</h1>
                     <span>Shenzhen Diman Microelectronics</span>
@@ -31,7 +33,7 @@
                 <ul>
                     <li><a href="index.html">首页</a></li>
                     <li><a href="about.html">公司介绍</a></li>
-                    <li><a href="products.html">产品展示</a></li>
+                    <li><a href="products.html" class="active">产品展示</a></li>
                     <li><a href="news.html">新闻动态</a></li>
                     <li><a href="contact.html">联系我们</a></li>
                 </ul>
@@ -39,89 +41,94 @@
         </div>
     </header>
 
-    <div class="page-header">
+    <!-- 页面标题 -->
+    <section class="page-header">
         <div class="container">
             <h1>产品展示</h1>
-            <p>我们代理和研发的各类电子元器件及解决方案</p>
+            <p>丰富的电子元器件产品线，满足不同领域的应用需求</p>
         </div>
-    </div>
+    </section>
 
+    <!-- 产品分类 -->
     <section style="padding: 60px 0;">
         <div class="container">
-            <h2 style="font-size: 32px; color: #1E3A8A; margin-bottom: 30px;">代理品牌</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; margin-bottom: 60px;">
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">ST</div>
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">TI</div>
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">NXP</div>
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">Infineon</div>
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">Microchip</div>
-                <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-radius: 8px;">Renesas</div>
-            </div>
-
-            <h2 style="font-size: 32px; color: #1E3A8A; margin-bottom: 30px;">热门产品</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="MCU" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- 产品1 -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="集成电路" style="width: 100%; height: 200px; object-fit: cover;">
                     <div style="padding: 20px;">
-                        <h3>STM32系列 MCU</h3>
-                        <p style="color: #666;">基于ARM Cortex-M内核的32位微控制器</p>
-                        <a href="#" class="btn" style="margin-top: 15px;">查看详情</a>
+                        <h3 style="font-size: 20px; color: #E60012; margin-bottom: 10px;">集成电路 (IC)</h3>
+                        <p style="margin-bottom: 15px;">包括MCU、电源管理IC、逻辑IC、射频IC等，覆盖消费电子、工业控制等领域。</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 14px;">查看详情</a>
                     </div>
                 </div>
                 
-                <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1581092335871-4c7ff2f8321b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Power IC" style="width: 100%; height: 200px; object-fit: cover;">
+                <!-- 产品2 -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1593053272423-9063ad1a0e27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="被动元件" style="width: 100%; height: 200px; object-fit: cover;">
                     <div style="padding: 20px;">
-                        <h3>电源管理芯片</h3>
-                        <p style="color: #666;">高效DC-DC转换器、LDO、PMIC等</p>
-                        <a href="#" class="btn" style="margin-top: 15px;">查看详情</a>
+                        <h3 style="font-size: 20px; color: #E60012; margin-bottom: 10px;">被动元件</h3>
+                        <p style="margin-bottom: 15px;">电容、电阻、电感、磁珠等全系列被动元件，品质稳定，供货及时。</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 14px;">查看详情</a>
                     </div>
                 </div>
                 
-                <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1581091870624-7c9e3e5d5a3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sensor" style="width: 100%; height: 200px; object-fit: cover;">
+                <!-- 产品3 -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1633869715703-6e5280635d88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="连接器" style="width: 100%; height: 200px; object-fit: cover;">
                     <div style="padding: 20px;">
-                        <h3>传感器</h3>
-                        <p style="color: #666;">温度、压力、加速度、陀螺仪等</p>
-                        <a href="#" class="btn" style="margin-top: 15px;">查看详情</a>
+                        <h3 style="font-size: 20px; color: #E60012; margin-bottom: 10px;">连接器</h3>
+                        <p style="margin-bottom: 15px;">板对板、线对板、USB、HDMI等各类连接器，满足不同接口需求。</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 14px;">查看详情</a>
                     </div>
                 </div>
                 
-                <div class="product-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1581091870624-7c9e3e5d5a3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Wireless" style="width: 100%; height: 200px; object-fit: cover;">
+                <!-- 产品4 -->
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1589394127117-1ee9c1b91002?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="传感器" style="width: 100%; height: 200px; object-fit: cover;">
                     <div style="padding: 20px;">
-                        <h3>无线连接芯片</h3>
-                        <p style="color: #666;">Wi-Fi、蓝牙、Zigbee、LoRa等模块</p>
-                        <a href="#" class="btn" style="margin-top: 15px;">查看详情</a>
+                        <h3 style="font-size: 20px; color: #E60012; margin-bottom: 10px;">传感器</h3>
+                        <p style="margin-bottom: 15px;">温度、湿度、压力、光电等各类传感器，广泛应用于智能设备。</p>
+                        <a href="#" class="btn" style="padding: 8px 15px; font-size: 14px;">查看详情</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 页脚 -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>迪曼微电子</h3>
-                    <p>专业的电子元器件供应商和方案提供商，致力于为客户提供优质的产品和服务。</p>
+                    <h3>关于我们</h3>
+                    <p>深圳市迪曼微电子科技有限公司是一家专业的电子元器件代理与贸易企业，致力于为客户提供一站式的电子元器件解决方案。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin" style="color: white; font-size: 20px;"></i></a>
+                        <a href="#"><i class="fab fa-linkedin" style="color: white; font-size: 20px;"></i></a>
+                        <a href="#"><i class="fab fa-email" style="color: white; font-size: 20px;"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
                     <h3>快速链接</h3>
+                    <a href="index.html">首页</a>
                     <a href="about.html">公司介绍</a>
                     <a href="products.html">产品展示</a>
                     <a href="news.html">新闻动态</a>
                     <a href="contact.html">联系我们</a>
                 </div>
+                
                 <div class="footer-section">
                     <h3>联系方式</h3>
-                    <p><i class="fas fa-phone"></i> 0755-XXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> info@dimanmicro.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 深圳市南山区科技园XXXX号</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 深圳市XX区XX路XX号XX大厦XX室</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> 0755-XXXX XXXX</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@dimanmicro.com</p>
                 </div>
             </div>
+            
             <div class="copyright">
-                &copy; 2025 深圳市迪曼微电子科技有限公司 版权所有
+                <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
             </div>
         </div>
     </footer>

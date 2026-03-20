@@ -6,12 +6,13 @@
     <title>深圳市迪曼微电子科技有限公司 - 电子元器件代理与贸易、电子产品方案研发</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-microchip" style="font-size: 32px; color: #1E3A8A;"></i>
+                <img src="logo.png" alt="迪曼微电子 Logo">
                 <div>
                     <h1>迪曼微电子</h1>
                     <span>Shenzhen Diman Microelectronics</span>
@@ -29,7 +30,7 @@
             
             <nav>
                 <ul>
-                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html" class="active">首页</a></li>
                     <li><a href="about.html">公司介绍</a></li>
                     <li><a href="products.html">产品展示</a></li>
                     <li><a href="news.html">新闻动态</a></li>
@@ -39,72 +40,48 @@
         </div>
     </header>
 
-    <section class="hero" style="background: linear-gradient(rgba(30,58,138,0.9), rgba(30,58,138,0.8)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; color: white; padding: 100px 0; text-align: center;">
+    <section class="hero" style="background: linear-gradient(rgba(230, 0, 18, 0.9), rgba(230, 0, 18, 0.8)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; color: white; padding: 100px 0; text-align: center;">
         <div class="container">
             <h2 style="font-size: 48px; margin-bottom: 20px;">专业的电子元器件解决方案</h2>
             <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">深圳市迪曼微电子科技有限公司专注于电子元器件代理与贸易、电子产品方案的研发与销售，为全球客户提供优质的产品和技术支持。</p>
-            <a href="contact.html" class="btn" style="background-color: white; color: #1E3A8A;">立即咨询</a>
+            <a href="contact.html" class="btn" style="background-color: white; color: #E60012;">立即咨询</a>
         </div>
     </section>
 
     <section class="advantages" style="padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 36px; color: #1E3A8A; margin-bottom: 50px;">我们的核心优势</h2>
-            
+            <h2 style="text-align: center; font-size: 36px; color: #E60012; margin-bottom: 50px;">我们的核心优势</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
                 <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #1E3A8A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
                         <i class="fas fa-handshake" style="font-size: 36px; color: white;"></i>
                     </div>
                     <h3 style="font-size: 22px; margin-bottom: 15px;">优质供应链</h3>
                     <p>与全球知名电子元器件制造商建立长期合作关系，确保产品品质和稳定供应。</p>
                 </div>
-                
                 <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #1E3A8A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-microchip" style="font-size: 36px; color: white;"></i>
+                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-lightbulb" style="font-size: 36px; color: white;"></i>
                     </div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px;">技术研发能力</h3>
-                    <p>专业的研发团队，可根据客户需求提供定制化的电子产品解决方案。</p>
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">专业研发能力</h3>
+                    <p>拥有资深的研发团队，可根据客户需求定制电子产品解决方案，提供技术支持。</p>
                 </div>
-                
                 <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #1E3A8A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-headset" style="font-size: 36px; color: white;"></i>
+                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-shield-halved" style="font-size: 36px; color: white;"></i>
                     </div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px;">全程技术支持</h3>
-                    <p>从选型到量产，提供全程技术支持和售后服务，让客户无后顾之忧。</p>
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">品质保障</h3>
+                    <p>严格的质量检测体系，所有产品均通过相关认证，确保交付产品的可靠性。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="products-preview" style="background-color: #f8f9fa; padding: 80px 0;">
+    <section style="background-color: #f8f9fa; padding: 80px 0; text-align: center;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 36px; color: #1E3A8A; margin-bottom: 50px;">主营产品</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                <div style="text-align: center;">
-                    <i class="fas fa-microchip" style="font-size: 48px; color: #1E3A8A; margin-bottom: 15px;"></i>
-                    <h3>微控制器(MCU)</h3>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-bolt" style="font-size: 48px; color: #1E3A8A; margin-bottom: 15px;"></i>
-                    <h3>电源管理芯片</h3>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-ruler" style="font-size: 48px; color: #1E3A8A; margin-bottom: 15px;"></i>
-                    <h3>传感器</h3>
-                </div>
-                <div style="text-align: center;">
-                    <i class="fas fa-wifi" style="font-size: 48px; color: #1E3A8A; margin-bottom: 15px;"></i>
-                    <h3>无线连接芯片</h3>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="products.html" class="btn btn-secondary">查看全部产品</a>
-            </div>
+            <h2 style="font-size: 32px; color: #333; margin-bottom: 20px;">丰富的产品体系</h2>
+            <p style="font-size: 18px; color: #666; margin-bottom: 40px;">覆盖消费电子、工业控制、汽车电子等多个领域的电子元器件</p>
+            <a href="products.html" class="btn">查看全部产品</a>
         </div>
     </section>
 
@@ -112,11 +89,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>迪曼微电子</h3>
-                    <p>专业的电子元器件供应商和方案提供商，致力于为客户提供优质的产品和服务。</p>
+                    <h3>关于我们</h3>
+                    <p>深圳市迪曼微电子科技有限公司是一家专业的电子元器件代理与贸易企业，致力于为客户提供一站式的电子元器件解决方案。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin" style="color: white; font-size: 20px;"></i></a>
+                        <a href="#"><i class="fab fa-linkedin" style="color: white; font-size: 20px;"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>快速链接</h3>
+                    <a href="index.html">首页</a>
                     <a href="about.html">公司介绍</a>
                     <a href="products.html">产品展示</a>
                     <a href="news.html">新闻动态</a>
@@ -124,17 +106,16 @@
                 </div>
                 <div class="footer-section">
                     <h3>联系方式</h3>
-                    <p><i class="fas fa-phone"></i> 0755-XXXXXXXX</p>
-                    <p><i class="fas fa-envelope"></i> info@dimanmicro.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 深圳市南山区科技园XXXX号</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 深圳市坪山区龙田街道乐彩产业园2栋603</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> 13530735969</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@dimanmicro.com</p>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 深圳市迪曼微电子科技有限公司 版权所有
+                <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
