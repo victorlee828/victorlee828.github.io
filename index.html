@@ -3,103 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>深圳市迪曼微电子科技有限公司 - 电子元器件代理与贸易、电子产品方案研发</title>
+    <title>深圳市迪曼微电子科技有限公司 - 电子元器件解决方案</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="DMW LOGO.png">
 </head>
 <body>
+    <!-- 顶部导航（和芯朋一致：浅色背景 + Logo + 搜索 + 横向菜单） -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="DMW LOGO.png" alt="迪曼微电子 Logo" style="height: 48px;">
+                <img src="DMW LOGO.png" alt="迪曼微电子 Logo" style="height: 40px;">
                 <div>
                     <h1>迪曼微电子</h1>
                     <span>Shenzhen Diman Microelectronics</span>
                 </div>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="language-switcher">
-                <button class="active" data-lang="zh">中文</button>
-                <button data-lang="en">EN</button>
+            <div class="search-box">
+                <input type="text" placeholder="搜索产品或应用关键词...">
+                <button><i class="fas fa-search"></i></button>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html" class="active">首页</a></li>
-                    <li><a href="about.html">公司介绍</a></li>
                     <li><a href="products.html">产品展示</a></li>
+                    <li><a href="solutions.html">解决方案</a></li>
+                    <li><a href="support.html">技术支持</a></li>
                     <li><a href="news.html">新闻动态</a></li>
+                    <li><a href="about.html">关于我们</a></li>
                     <li><a href="contact.html">联系我们</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <section class="hero" style="background: linear-gradient(rgba(230, 0, 18, 0.9), rgba(230, 0, 18, 0.8)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; color: white; padding: 100px 0; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 48px; margin-bottom: 20px;">专业的电子元器件解决方案</h2>
-            <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">深圳市迪曼微电子科技有限公司专注于电子元器件代理与贸易、电子产品方案的研发与销售，为全球客户提供优质的产品和技术支持。</p>
-            <a href="contact.html" class="btn" style="background-color: white; color: #E60012;">立即咨询</a>
+    <!-- 全屏轮播 Banner（和芯朋一致：渐变科技背景 + 居中标题 + 自动轮播） -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active" style="background: linear-gradient(rgba(0, 128, 128, 0.85), rgba(0, 128, 128, 0.75)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;">
+                <div class="slide-content">
+                    <h2>为您提供高效可靠的<br>电子元器件解决方案</h2>
+                    <p>TO PROVIDE YOU WITH HIGH PERFORMANCE AND RELIABLE<br>ELECTRONIC COMPONENTS SOLUTIONS</p>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(rgba(0, 102, 204, 0.85), rgba(0, 102, 204, 0.75)), url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;">
+                <div class="slide-content">
+                    <h2>家电电源及驱动芯片<br>行业优秀厂商</h2>
+                    <p>HOME APPLIANCE POWER SUPPLY AND DRIVER IC<br>INDUSTRY EXCELLENT MANUFACTURER</p>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(rgba(153, 204, 0, 0.85), rgba(153, 204, 0, 0.75)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') center/cover no-repeat;">
+                <div class="slide-content">
+                    <h2>更可靠·更高效<br>业内先进的高低压集成半导体技术</h2>
+                    <p>THE INDUSTRY'S ADVANCED HIGH AND LOW VOLTAGE INTEGRATED SEMICONDUCTOR TECHNOLOGY</p>
+                </div>
+            </div>
         </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots"></div>
     </section>
 
-    <section class="advantages" style="padding: 80px 0;">
+    <!-- 内容区块（和芯朋一致：多色卡片网格 + 右侧新闻时间轴） -->
+    <section class="content-grid">
         <div class="container">
-            <h2 style="text-align: center; font-size: 36px; color: #E60012; margin-bottom: 50px;">我们的核心优势</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-handshake" style="font-size: 36px; color: white;"></i>
-                    </div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px;">优质供应链</h3>
-                    <p>与全球知名电子元器件制造商建立长期合作关系，确保产品品质和稳定供应。</p>
+            <div class="grid-left">
+                <div class="card card-red">
+                    <h3>光伏/储能/充电桩 功率芯片整体方案</h3>
+                    <p>针对光伏储能、充电桩、精密电源等场景，提供完整的功率芯片解决方案，助力高效能源转换。</p>
+                    <a href="#" class="card-btn">查看详情</a>
                 </div>
-                <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-lightbulb" style="font-size: 36px; color: white;"></i>
-                    </div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px;">专业研发能力</h3>
-                    <p>拥有资深的研发团队，可根据客户需求定制电子产品解决方案，提供技术支持。</p>
+                <div class="card card-orange">
+                    <h3>工业电源经典芯片及方案</h3>
+                    <p>覆盖工业控制、通信设备等领域，提供高可靠性、高效率的电源管理芯片。</p>
+                    <a href="#" class="card-btn">查看详情</a>
                 </div>
-                <div class="advantage-card" style="text-align: center; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-shield-halved" style="font-size: 36px; color: white;"></i>
+                <div class="card card-green">
+                    <h3>充电器&适配器经典芯片及方案</h3>
+                    <p>适用于消费电子快充、适配器等场景，实现高效、安全的电源转换。</p>
+                    <a href="#" class="card-btn">查看详情</a>
+                </div>
+                <div class="card card-blue">
+                    <h3>迪曼技术文章</h3>
+                    <p>分享电源管理、半导体技术等领域的专业知识与技术洞察。</p>
+                    <a href="#" class="card-btn">查看详情</a>
+                </div>
+            </div>
+            <div class="grid-right">
+                <div class="news-timeline">
+                    <div class="news-item">
+                        <div class="news-date"><span class="year">2026</span><span class="day">03-12</span></div>
+                        <div class="news-content">
+                            <p>迪曼微电子参加2026年电子展会，展示最新电源管理芯片方案</p>
+                            <a href="#" class="news-detail">详情</a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px;">品质保障</h3>
-                    <p>严格的质量检测体系，所有产品均通过相关认证，确保交付产品的可靠性。</p>
+                    <div class="news-item">
+                        <div class="news-date"><span class="year">2025</span><span class="day">11-15</span></div>
+                        <div class="news-content">
+                            <p>迪曼微电子发布新一代工业级电源芯片，提升效率与可靠性</p>
+                            <a href="#" class="news-detail">详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-links">
+                    <a href="contact.html" class="quick-link"><i class="fas fa-comments"></i> 快速咨询</a>
+                    <a href="contact.html" class="quick-link"><i class="fas fa-map-marker-alt"></i> 公司位置</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 页脚（和芯朋一致：简洁版权信息） -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>关于我们</h3>
-                    <p>深圳市迪曼微电子科技有限公司是一家专业的电子元器件代理与贸易企业，致力于为客户提供一站式的电子元器件解决方案。</p>
-                </div>
-                <div class="footer-section">
-                    <h3>快速链接</h3>
-                    <a href="index.html">首页</a>
-                    <a href="about.html">公司介绍</a>
-                    <a href="products.html">产品展示</a>
-                    <a href="news.html">新闻动态</a>
-                    <a href="contact.html">联系我们</a>
-                </div>
-                <div class="footer-section">
-                    <h3>联系方式</h3>
-                    <p>深圳市坪山区龙田街道乐彩产业园2栋603</p>
-                    <p>13530735969</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
-            </div>
+            <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
+            <p>法律声明 | 粤ICP备xxxxxxxx号</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
