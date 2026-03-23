@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 轮播
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.querySelector('.slider-dots');
     const prevBtn = document.querySelector('.slider-prev');
@@ -27,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSlide() {
         goToSlide((currentSlide + 1) % slides.length);
     }
+
     function prevSlide() {
         goToSlide((currentSlide - 1 + slides.length) % slides.length);
     }
@@ -42,101 +42,132 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hero-slider').addEventListener('mouseenter', () => {
         clearInterval(slideInterval);
     });
-    document.querySelector('.hero-slider').addEventListener('mouseleave', startAutoSlide);
+    document.querySelector('.hero-slider').addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
 
-    // 移动端菜单
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('nav');
     mobileMenuBtn?.addEventListener('click', () => {
         nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
         const icon = mobileMenuBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
     });
 
-    // ====================== 粒子磁吸效果（正常跟随鼠标）======================
     const canvas = document.getElementById('tech-bg');
-    if (!canvas) return;
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = 400;
 
-    const ctx = canvas.getContext('2d');
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = 400;
+        let mouse = { x: width/2, y: height/2, active: false };
 
-    let mouse = {
-        x: w / 2,
-        y: h / 2,
-        isMove: false
-    };
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * w;
-            this.y = Math.random() * h;
-            this.radius = Math.random() * 2 + 1;
-            this.color = 'rgba(255,255,255,0.6)';
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-        }
-    }
-
-    const particles = [];
-    for (let i = 0; i < 60; i++) {
-        particles.push(new Particle());
-    }
-
-    function createLines() {
-        for (let i = 0; i < particles.length; i++) {
-            const p1 = particles[i];
-            const dx = p1.x - mouse.x;
-            const dy = p1.y - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < 140) {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(255,255,255,${0.3 * (1 - dist / 140)})`;
-                ctx.lineWidth = 0.5;
-                ctx.moveTo(p1.x, p1.y);
-                ctx.lineTo(mouse.x, mouse.y);
-                ctx.stroke();
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.color = 'rgba(255, 255, 255, 0.8)';
             }
 
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const dx2 = p1.x - p2.x;
-                const dy2 = p1.y - p2.y;
-                const dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-                if (dist2 < 90) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(255,255,255,0.2)`;
-                    ctx.lineWidth = 0.3;
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+
+                if (mouse.active) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 180) {
+                        this.x += dx * 0.02;
+                        this.y += dy * 0.02;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        const particleCount = 60; 
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance/100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+
+                if (mouse.active) {
+                    const p = particles[i];
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 200) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * (1 - distance/200)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
                 }
             }
         }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            drawLines();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+        canvas.addEventListener('mouseleave', () => {
+            mouse.active = false;
+        });
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = 400;
+        });
     }
-
-    function animate() {
-        ctx.clearRect(0, 0, w, h);
-        particles.forEach(p => p.draw());
-        createLines();
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
-
-    window.addEventListener('resize', () => {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = 400;
-    });
 });
