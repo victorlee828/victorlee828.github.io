@@ -37,19 +37,15 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 10px; /* 控制 Logo 和文字的间距 */
 }
 
-.logo div h1 {
-    font-size: 22px;
-    color: #E60012;
-    margin-left: 10px;
-}
-
-.logo div span {
-    font-size: 12px;
-    color: #666;
-    display: block;
-    margin-top: 2px;
+.logo-text h1 {
+    font-size: 22px; /* 和左侧 Diman 里的 D 字号保持一致 */
+    color: #E60012; /* 保持品牌红 */
+    font-weight: bold;
+    line-height: 1; /* 让文字垂直居中对齐 */
+    margin: 0;
 }
 
 .search-box {
