@@ -92,25 +92,48 @@
 
             <div class="support-form">
                 <h3>在线提交技术需求</h3>
-                <form id="techForm">
+                <!-- 替换原有<form id="techForm"> 整段 -->
+                <form id="techForm" method="post" action="send_mail.php">
                     <div class="form-group">
                         <label for="name">联系人</label>
-                        <input type="text" id="name" placeholder="请输入您的姓名" required>
+                        <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">联系电话</label>
-                        <input type="tel" id="phone" placeholder="请输入您的电话" required>
+                        <input type="tel" id="phone" name="phone" placeholder="请输入您的电话" required>
                     </div>
                     <div class="form-group">
                         <label for="email">邮箱</label>
-                        <input type="email" id="email" placeholder="请输入您的邮箱">
+                        <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
                     </div>
                     <div class="form-group">
                         <label for="demand">技术需求描述</label>
-                        <textarea id="demand" rows="4" placeholder="请详细描述您的技术需求或问题" required></textarea>
+                        <textarea id="demand" name="demand" rows="4" placeholder="请详细描述您的技术需求或问题" required></textarea>
                     </div>
+                    <!-- 隐藏字段：区分是技术支持表单 -->
+                    <input type="hidden" name="type" value="技术支持需求">
                     <button type="submit" class="form-btn">提交需求</button>
                 </form>
+
+                <!-- 替换原有表单提交的js代码，新增在</form>后面 -->
+                <script>
+                document.getElementById('techForm').addEventListener('submit', function(e) {
+                    e.preventDefault(); // 阻止默认提交
+                    const formData = new FormData(this); // 获取表单所有数据
+                    fetch('send_mail.php', {
+                        method: 'POST',
+                        body: formData
+                    }).then(res => res.json()).then(data => {
+                        alert(data.msg); // 弹出提交结果
+                        if (data.code === 1) {
+                            this.reset(); // 提交成功清空表单
+                        }
+                    }).catch(err => {
+                        alert('网络错误，提交失败！');
+                        console.log(err);
+                    });
+                });
+                </script>
             </div>
         </div>
     </section>

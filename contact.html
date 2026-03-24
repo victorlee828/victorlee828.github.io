@@ -87,33 +87,47 @@
                 </div>
                 <div>
                     <h2 style="font-size: 28px; color: #E60012; margin-bottom: 30px;">在线咨询</h2>
-                    <!-- 改用 Formspree 实现邮件发送，无需后端 -->
-                    <form action="https://formspree.io/f/xpznlqgy" method="POST" style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
-                        <!-- 隐藏字段：指定接收邮箱 -->
-                        <input type="hidden" name="_to" value="victorlee@dimantech.com.cn">
-                        <!-- 隐藏字段：设置邮件主题 -->
-                        <input type="hidden" name="_subject" value="迪曼微电子官网 - 客户咨询">
-                        <!-- 防垃圾邮件验证 -->
-                        <input type="text" name="_gotcha" style="display:none">
-                        
+                    <!-- 联系我们表单 -->
+                    <form id="contactForm" method="post" action="send_mail.php" style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
                         <div class="form-group" style="margin-bottom: 20px;">
-                            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">姓名 *</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            <label for="c_name" style="display: block; margin-bottom: 8px; font-weight: 500;">姓名 *</label>
+                            <input type="text" id="c_name" name="name" placeholder="请输入您的姓名" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                         </div>
                         <div class="form-group" style="margin-bottom: 20px;">
-                            <label for="company" style="display: block; margin-bottom: 8px; font-weight: 500;">公司名称 *</label>
-                            <input type="text" id="company" name="company" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            <label for="c_company" style="display: block; margin-bottom: 8px; font-weight: 500;">公司名称 *</label>
+                            <input type="text" id="c_company" name="company" placeholder="请输入您的公司名称" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                         </div>
                         <div class="form-group" style="margin-bottom: 20px;">
-                            <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500;">联系电话 *</label>
-                            <input type="tel" id="phone" name="phone" required pattern="^1[3-9]\d{9}$" title="请输入有效的11位手机号码" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            <label for="c_phone" style="display: block; margin-bottom: 8px; font-weight: 500;">联系电话 *</label>
+                            <input type="tel" id="c_phone" name="phone" placeholder="请输入您的电话" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                         </div>
                         <div class="form-group" style="margin-bottom: 20px;">
-                            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">咨询内容 *</label>
-                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: none;"></textarea>
+                            <label for="c_message" style="display: block; margin-bottom: 8px; font-weight: 500;">咨询内容 *</label>
+                            <textarea id="c_message" name="demand" rows="5" placeholder="请输入您的留言/咨询内容" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: none;"></textarea>
                         </div>
+                        <input type="hidden" name="type" value="联系我们留言">
                         <button type="submit" class="btn" style="width: 100%; font-size: 16px;">提交咨询</button>
                     </form>
+
+                    <script>
+                    document.getElementById('contactForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const formData = new FormData(this);
+                        fetch('send_mail.php', {
+                            method: 'POST',
+                            body: formData
+                        }).then(res => res.json()).then(data => {
+                            alert(data.msg);
+                            if (data.code === 1) {
+                                this.reset();
+                            }
+                        }).catch(err => {
+                            alert('网络错误，提交失败！');
+                            console.log(err);
+                        });
+                    });
+                    </script>
+
                     <p style="margin-top: 15px; font-size: 14px; color: #666; text-align: center;">提交后我们会在1个工作日内回复您</p>
                 </div>
             </div>
