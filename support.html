@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="DMW LOGO.png">
 </head>
 <body>
-    <!-- 顶部导航（和首页一致） -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -39,101 +38,40 @@
         </div>
     </header>
 
-    <!-- 技术支持页内容 -->
-    <section class="support-banner">
+    <section class="page-header">
         <div class="container">
-            <h2>技术支持</h2>
-            <p>专业团队为您提供全方位技术服务与支持</p>
+            <h1>技术支持</h1>
+            <p>专业技术团队，为您提供高效解决方案</p>
         </div>
     </section>
 
-    <section class="support-content">
+    <section style="padding: 60px 0;">
         <div class="container">
-            <div class="support-grid">
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>资料下载</h3>
-                    <ul>
-                        <li><a href="#">产品规格书（PDF）</a></li>
-                        <li><a href="#">方案设计手册</a></li>
-                        <li><a href="#">驱动程序下载</a></li>
-                        <li><a href="#">国产化芯片选型指南</a></li>
-                    </ul>
-                </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 28px; color: #E60012; margin-bottom: 30px; text-align: center;">提交技术需求</h2>
+                <form action="https://formspree.io/f/xpznlqgy" method="POST" style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
+                    <input type="hidden" name="_to" value="victorlee@dimantech.com.cn">
+                    <input type="hidden" name="_subject" value="【迪曼微电子】技术支持需求">
+                    <input type="text" name="_gotcha" style="display:none;">
 
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-question-circle"></i>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">联系人 *</label>
+                        <input type="text" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                     </div>
-                    <h3>常见问题</h3>
-                    <ul>
-                        <li><a href="#">芯片选型注意事项</a></li>
-                        <li><a href="#">电源方案效率优化技巧</a></li>
-                        <li><a href="#">故障排查与解决方案</a></li>
-                        <li><a href="#">产品兼容性问题解答</a></li>
-                    </ul>
-                </div>
-
-                <div class="support-card">
-                    <div class="support-icon">
-                        <i class="fas fa-headset"></i>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">联系电话 *</label>
+                        <input type="tel" name="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                     </div>
-                    <h3>技术咨询</h3>
-                    <ul>
-                        <li><i class="fas fa-user"></i> FAE技术支持团队</li>
-                        <li><i class="fas fa-phone"></i> 技术热线：0755-23744354</li>
-                        <li><i class="fas fa-envelope"></i> 咨询邮箱：victorlee@dimantech.com.cn</li>
-                        <li><i class="fas fa-clock"></i> 服务时间：9:00-18:00（工作日）</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="support-form">
-                <h3>在线提交技术需求</h3>
-                <!-- 替换原有<form id="techForm"> 整段 -->
-                <form id="techForm" method="post" action="send_mail.php">
-                    <div class="form-group">
-                        <label for="name">联系人</label>
-                        <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">邮箱</label>
+                        <input type="email" name="email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                     </div>
-                    <div class="form-group">
-                        <label for="phone">联系电话</label>
-                        <input type="tel" id="phone" name="phone" placeholder="请输入您的电话" required>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">技术需求描述 *</label>
+                        <textarea name="demand" rows="5" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: none;"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="email">邮箱</label>
-                        <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
-                    </div>
-                    <div class="form-group">
-                        <label for="demand">技术需求描述</label>
-                        <textarea id="demand" name="demand" rows="4" placeholder="请详细描述您的技术需求或问题" required></textarea>
-                    </div>
-                    <!-- 隐藏字段：区分是技术支持表单 -->
-                    <input type="hidden" name="type" value="技术支持需求">
-                    <button type="submit" class="form-btn">提交需求</button>
+                    <button type="submit" style="width: 100%; padding: 12px; background-color: #E60012; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">提交需求</button>
                 </form>
-
-                <!-- 替换原有表单提交的js代码，新增在</form>后面 -->
-                <script>
-                document.getElementById('techForm').addEventListener('submit', function(e) {
-                    e.preventDefault(); // 阻止默认提交
-                    const formData = new FormData(this); // 获取表单所有数据
-                    fetch('send_mail.php', {
-                        method: 'POST',
-                        body: formData
-                    }).then(res => res.json()).then(data => {
-                        alert(data.msg); // 弹出提交结果
-                        if (data.code === 1) {
-                            this.reset(); // 提交成功清空表单
-                        }
-                    }).catch(err => {
-                        alert('网络错误，提交失败！');
-                        console.log(err);
-                    });
-                });
-                </script>
             </div>
         </div>
     </section>
@@ -157,6 +95,7 @@
                     <h3>联系方式</h3>
                     <p>深圳市坪山区龙田街道乐彩产业园2栋603</p>
                     <p>0755-23744354</p>
+                    <p>victorlee@dimantech.com.cn</p>
                 </div>
             </div>
             <div class="copyright">
@@ -165,17 +104,5 @@
         </div>
     </footer>
     <script src="script.js"></script>
-</body>
-</html>
-
-    <script src="script.js"></script>
-    <script>
-        // 技术需求表单提交
-        document.getElementById('techForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('技术需求提交成功！我们的FAE团队将在1个工作日内与您联系。');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
