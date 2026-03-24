@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 轮播逻辑
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.querySelector('.slider-dots');
     const prevBtn = document.querySelector('.slider-prev');
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSlide() {
         goToSlide((currentSlide + 1) % slides.length);
     }
-
     function prevSlide() {
         goToSlide((currentSlide - 1 + slides.length) % slides.length);
     }
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoSlide();
     });
 
+    // 移动端菜单
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('nav');
     mobileMenuBtn?.addEventListener('click', () => {
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 粒子动态背景
     const canvas = document.getElementById('tech-bg');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
                 if (this.x < 0 || this.x > width) this.speedX *= -1;
                 if (this.y < 0 || this.y > height) this.speedY *= -1;
 
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const particles = [];
-        const particleCount = 60; 
+        const particleCount = 60;
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
@@ -116,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dx = p1.x - p2.x;
                     const dy = p1.y - p2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-
                     if (distance < 100) {
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);

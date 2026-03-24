@@ -18,7 +18,7 @@ body {
     padding: 0 20px;
 }
 
-/* 顶部导航（完全保留你喜欢的样式） */
+/* 顶部导航 */
 header {
     background: #f8f9fa;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -37,14 +37,14 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* 控制 Logo 和文字的间距 */
+    gap: 10px;
 }
 
 .logo-text h1 {
-    font-size: 22px; /* 和左侧 Diman 里的 D 字号保持一致 */
-    color: #E60012; /* 保持品牌红 */
+    font-size: 22px;
+    color: #E60012;
     font-weight: bold;
-    line-height: 1; /* 让文字垂直居中对齐 */
+    line-height: 1;
     margin: 0;
 }
 
@@ -104,13 +104,12 @@ nav ul li a.active {
     color: #E60012;
 }
 
-/* 轮播 Banner（保留原样式 + 新增画布样式） */
+/* 轮播 Banner + 动态背景 */
 .hero-slider {
     position: relative;
     height: 400px;
     overflow: hidden;
 }
-/* 动态画布：叠加在背景上，半透明不遮挡原有渐变 */
 .tech-canvas {
     position: absolute;
     top: 0;
@@ -118,13 +117,11 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.7; /* 半透明，不影响原有渐变背景 */
+    opacity: 0.7;
 }
-
 .slider-container {
     height: 100%;
 }
-
 .slide {
     position: absolute;
     top: 0;
@@ -136,30 +133,25 @@ nav ul li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2; /* 文字在画布之上 */
+    z-index: 2;
 }
-
 .slide.active {
     opacity: 1;
 }
-
 .slide-content {
     text-align: center;
     color: white;
-    z-index: 3; /* 确保文字最上层 */
+    z-index: 3;
 }
-
 .slide-content h2 {
     font-size: 32px;
     margin-bottom: 15px;
     line-height: 1.3;
 }
-
 .slide-content p {
     font-size: 14px;
     line-height: 1.5;
 }
-
 .slider-controls {
     position: absolute;
     top: 50%;
@@ -170,7 +162,6 @@ nav ul li a.active {
     padding: 0 20px;
     z-index: 3;
 }
-
 .slider-controls button {
     background: rgba(255,255,255,0.3);
     border: none;
@@ -181,11 +172,9 @@ nav ul li a.active {
     cursor: pointer;
     transition: background 0.3s;
 }
-
 .slider-controls button:hover {
     background: rgba(255,255,255,0.5);
 }
-
 .slider-dots {
     position: absolute;
     bottom: 20px;
@@ -195,7 +184,6 @@ nav ul li a.active {
     gap: 8px;
     z-index: 3;
 }
-
 .slider-dots .dot {
     width: 10px;
     height: 10px;
@@ -204,67 +192,55 @@ nav ul li a.active {
     cursor: pointer;
     transition: background 0.3s;
 }
-
 .slider-dots .dot.active {
     background: white;
 }
 
-/* 内容网格（完全保留你喜欢的样式） */
+/* 内容网格 */
 .content-grid {
     padding: 40px 0;
 }
-
 .content-grid .container {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 30px;
 }
-
 .grid-left {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-
 .card {
     padding: 25px;
     border-radius: 4px;
     color: white;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
-
 .card-red {
     background: linear-gradient(135deg, #e64a19, #f4511e);
 }
-
 .card-orange {
     background: linear-gradient(135deg, #f9a825, #fbc02d);
 }
-
 .card-green {
     background: linear-gradient(135deg, #8bc34a, #9ccc65);
 }
-
 .card-blue {
     background: linear-gradient(135deg, #607d8b, #78909c);
 }
-
 .card h3 {
     font-size: 18px;
     margin-bottom: 12px;
 }
-
 .card p {
     font-size: 14px;
     margin-bottom: 15px;
     line-height: 1.5;
 }
-
 .card-btn {
     display: inline-block;
     background: rgba(255,255,255,0.2);
@@ -275,12 +251,11 @@ nav ul li a.active {
     font-size: 13px;
     transition: background 0.3s;
 }
-
 .card-btn:hover {
     background: rgba(255,255,255,0.4);
 }
 
-/* 新闻时间轴（完全保留） */
+/* 新闻时间轴 */
 .news-timeline {
     background: white;
     border: 1px solid #eee;
@@ -288,7 +263,6 @@ nav ul li a.active {
     padding: 20px;
     margin-bottom: 20px;
 }
-
 .news-item {
     display: flex;
     gap: 15px;
@@ -296,50 +270,43 @@ nav ul li a.active {
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
 }
-
 .news-item:last-child {
     padding-bottom: 0;
     margin-bottom: 0;
     border-bottom: none;
 }
-
 .news-date {
     text-align: center;
     flex-shrink: 0;
 }
-
 .news-date .year {
     display: block;
     font-size: 14px;
     color: #E60012;
     font-weight: bold;
 }
-
 .news-date .day {
     display: block;
     font-size: 13px;
     color: #666;
 }
-
 .news-content p {
     font-size: 14px;
     margin-bottom: 8px;
     line-height: 1.4;
 }
-
 .news-detail {
     font-size: 12px;
     color: #E60012;
     text-decoration: none;
 }
 
-/* 快捷入口（完全保留） */
+/* 快捷入口 */
 .quick-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
-
 .quick-link {
     display: flex;
     align-items: center;
@@ -352,17 +319,15 @@ nav ul li a.active {
     font-size: 14px;
     transition: background 0.3s;
 }
-
 .quick-link:hover {
     background: #e0e0e0;
 }
-
 .quick-link i {
     margin-right: 8px;
     color: #E60012;
 }
 
-/* 页脚（完全保留） */
+/* 页脚 */
 footer {
     background: #f5f5f5;
     padding: 20px 0;
@@ -370,12 +335,11 @@ footer {
     font-size: 13px;
     color: #666;
 }
-
 footer p {
     margin-bottom: 8px;
 }
 
-/* 响应式（完全保留） */
+/* 响应式 */
 @media (max-width: 992px) {
     .search-box {
         display: none;
