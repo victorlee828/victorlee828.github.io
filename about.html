@@ -9,48 +9,43 @@
     <link rel="icon" type="image/x-icon" href="DMW LOGO.png">
 </head>
 <body>
+    <!-- 统一导航栏：替换每个页面原有的 <header> 标签内所有内容 -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="DMW LOGO.png" alt="迪曼微电子 Logo" style="height: 48px;">
-                <div>
-                    <h1>迪曼微电子</h1>
-                    <span>Shenzhen Diman Microelectronics</span>
+                <img src="DMW LOGO.png" alt="迪曼微 Logo" style="height: 40px;">
+                <div class="logo-text">
+                    <h1>迪曼微</h1>
                 </div>
             </div>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="language-switcher">
-                <button class="active" data-lang="zh">中文</button>
-                <button data-lang="en">EN</button>
+            <div class="search-box">
+                <input type="text" placeholder="搜索产品或应用关键词...">
+                <button><i class="fas fa-search"></i></button>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="about.html" class="active">公司介绍</a></li>
                     <li><a href="products.html">产品展示</a></li>
+                    <li><a href="solutions.html">解决方案</a></li>
+                    <li><a href="support.html">技术支持</a></li>
                     <li><a href="news.html">新闻动态</a></li>
+                    <li><a href="about.html" class="active">关于我们</a></li>
                     <li><a href="contact.html">联系我们</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
-
-    <section class="page-header">
-        <div class="container">
-            <h1>公司介绍</h1>
-            <p>专注电子元器件领域，致力于为客户创造价值</p>
-        </div>
-    </section>
 
     <section style="padding: 60px 0;">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
                 <div>
                     <h2 style="font-size: 28px; color: #E60012; margin-bottom: 20px;">关于迪曼微电子</h2>
-                    <p style="margin-bottom: 15px; font-size: 16px;">深圳市迪曼微电子科技有限公司成立于2018年，是一家专业从事电子元器件代理、分销及电子产品方案研发的高科技企业。</p>
-                    <p style="margin-bottom: 15px; font-size: 16px;">公司总部位于深圳，在香港、上海、北京等地设有分支机构，凭借完善的供应链体系和专业的技术服务，为消费电子、工业控制、汽车电子、通信设备等领域的客户提供优质的产品和解决方案。</p>
+                    <p style="margin-bottom: 15px; font-size: 16px;">深圳市迪曼微电子科技有限公司成立于2020年，是一家专业从事电子元器件代理、分销及电子产品方案研发的高科技企业。</p>
+                    <p style="margin-bottom: 15px; font-size: 16px;">公司总部位于深圳，在武汉、中山等地设有分支机构，凭借完善的供应链体系和专业的技术服务，为消费电子、工业控制、汽车电子、通信设备等领域的客户提供优质的产品和解决方案。</p>
                     <p style="font-size: 16px;">我们始终坚持“诚信、专业、创新、共赢”的经营理念，与国内外多家知名品牌建立了长期稳定的合作关系，赢得了客户的广泛认可。</p>
                 </div>
                 <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
@@ -66,7 +61,7 @@
             <div style="max-width: 800px; margin: 0 auto;">
                 <div style="display: flex; margin-bottom: 30px; align-items: center;">
                     <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <span style="color: white; font-size: 20px; font-weight: bold;">2018</span>
+                        <span style="color: white; font-size: 20px; font-weight: bold;">2020</span>
                     </div>
                     <div style="margin-left: 20px;">
                         <h3 style="font-size: 20px; margin-bottom: 10px;">公司成立</h3>
@@ -75,16 +70,16 @@
                 </div>
                 <div style="display: flex; margin-bottom: 30px; align-items: center;">
                     <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <span style="color: white; font-size: 20px; font-weight: bold;">2020</span>
+                        <span style="color: white; font-size: 20px; font-weight: bold;">2023</span>
                     </div>
                     <div style="margin-left: 20px;">
                         <h3 style="font-size: 20px; margin-bottom: 10px;">拓展产品线</h3>
-                        <p>与多家国际知名品牌达成合作，产品线覆盖被动元件、主动元件、连接器等全品类。</p>
+                        <p>与多家国际知名品牌达成合作，产品线覆盖主动元件、被动元件等全品类。</p>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center;">
                     <div style="width: 80px; height: 80px; background-color: #E60012; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <span style="color: white; font-size: 20px; font-weight: bold;">2023</span>
+                        <span style="color: white; font-size: 20px; font-weight: bold;">2025</span>
                     </div>
                     <div style="margin-left: 20px;">
                         <h3 style="font-size: 20px; margin-bottom: 10px;">研发中心成立</h3>

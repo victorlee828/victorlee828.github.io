@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持 - 深圳市迪曼微电子科技有限公司</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="DMW LOGO.png">
+</head>
+<body>
+    <!-- 顶部导航（和首页一致） -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="DMW LOGO.png" alt="迪曼微 Logo" style="height: 40px;">
+                <div class="logo-text">
+                    <h1>迪曼微</h1>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索产品或应用关键词...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="products.html">产品展示</a></li>
+                    <li><a href="solutions.html">解决方案</a></li>
+                    <li><a href="support.html" class="active">技术支持</a></li>
+                    <li><a href="news.html">新闻动态</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 技术支持页内容 -->
+    <section class="support-banner">
+        <div class="container">
+            <h2>技术支持</h2>
+            <p>专业团队为您提供全方位技术服务与支持</p>
+        </div>
+    </section>
+
+    <section class="support-content">
+        <div class="container">
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>资料下载</h3>
+                    <ul>
+                        <li><a href="#">产品规格书（PDF）</a></li>
+                        <li><a href="#">方案设计手册</a></li>
+                        <li><a href="#">驱动程序下载</a></li>
+                        <li><a href="#">国产化芯片选型指南</a></li>
+                    </ul>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>常见问题</h3>
+                    <ul>
+                        <li><a href="#">芯片选型注意事项</a></li>
+                        <li><a href="#">电源方案效率优化技巧</a></li>
+                        <li><a href="#">故障排查与解决方案</a></li>
+                        <li><a href="#">产品兼容性问题解答</a></li>
+                    </ul>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>技术咨询</h3>
+                    <ul>
+                        <li><i class="fas fa-user"></i> FAE技术支持团队</li>
+                        <li><i class="fas fa-phone"></i> 技术热线：400-xxxx-xxx</li>
+                        <li><i class="fas fa-envelope"></i> 咨询邮箱：tech@dimantech.com.cn</li>
+                        <li><i class="fas fa-clock"></i> 服务时间：9:00-18:00（工作日）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="support-form">
+                <h3>在线提交技术需求</h3>
+                <form id="techForm">
+                    <div class="form-group">
+                        <label for="name">联系人</label>
+                        <input type="text" id="name" placeholder="请输入您的姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联系电话</label>
+                        <input type="tel" id="phone" placeholder="请输入您的电话" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" placeholder="请输入您的邮箱">
+                    </div>
+                    <div class="form-group">
+                        <label for="demand">技术需求描述</label>
+                        <textarea id="demand" rows="4" placeholder="请详细描述您的技术需求或问题" required></textarea>
+                    </div>
+                    <button type="submit" class="form-btn">提交需求</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚（和首页一致） -->
+    <footer>
+        <div class="container">
+            <p>© 2026 深圳市迪曼微电子科技有限公司 版权所有</p>
+            <p>法律声明 | 粤ICP备xxxxxxxx号</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 技术需求表单提交
+        document.getElementById('techForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('技术需求提交成功！我们的FAE团队将在1个工作日内与您联系。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
